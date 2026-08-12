@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import LegalNotice from "./LegalNotice";
 
 export default function Footer() {
   return (
@@ -57,6 +58,8 @@ export default function Footer() {
       <p className="select-none whitespace-nowrap text-center text-[18vw] font-black leading-[0.8] tracking-tighter text-white/[0.04]">
         {SITE.name}
       </p>
+
+      <LegalNotice />
 
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/30">
         © {new Date().getFullYear()} {SITE.name}. Alle Preise ohne Gewähr.

@@ -35,7 +35,7 @@ Excel-Spalten — **Name** und **Link** sind Pflicht, der Rest optional:
 | Feld      | Erkannte Überschriften                    |
 | --------- | ----------------------------------------- |
 | Name      | Name, Produkt, Product, Titel, Title      |
-| Link      | Link, URL, Mulebuy, Kauflink, Buylink     |
+| Link      | Link, URL, Kauflink, Buylink, Produktlink |
 | Kategorie | Kategorie, Category, Typ, Type            |
 | Preis     | Preis, Price, EUR, Kosten                 |
 | Bild      | Bild, Image, Img, Foto, Picture           |

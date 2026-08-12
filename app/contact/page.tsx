@@ -9,11 +9,6 @@ const CHANNELS = [
     value: "Alle Links an einem Ort",
     href: SITE.linktree,
   },
-  {
-    label: "Mulebuy",
-    value: "Sign-Up mit Coupons",
-    href: SITE.mulebuy,
-  },
 ];
 
 export default function ContactPage() {
@@ -36,7 +31,7 @@ export default function ContactPage() {
         </p>
       </Reveal>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4">
         {CHANNELS.map((channel, i) => (
           <Reveal key={channel.label} delay={i * 0.08}>
             <a

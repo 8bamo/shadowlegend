@@ -51,14 +51,6 @@ export default function Footer() {
           >
             Linktree
           </a>
-          <a
-            href={SITE.mulebuy}
-            target="_blank"
-            rel="noreferrer"
-            className="w-fit text-white/70 hover:text-white"
-          >
-            Mulebuy
-          </a>
         </div>
       </div>
 

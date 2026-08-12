@@ -15,7 +15,7 @@ const FAQ = [
   },
   {
     q: "Welchen Agent soll ich nehmen?",
-    a: "Ich nutze Mulebuy. Über meinen Link bekommst du beim Sign-Up ein Coupon-Paket. Andere Agents funktionieren auch, dann musst du den Artikel-Link aber selbst konvertieren.",
+    a: "Nimm den Agent deines Vertrauens. Die aktuellen Empfehlungen und Sign-Up-Links findest du in meinem Linktree — bei einem anderen Agent musst du den Artikel-Link selbst konvertieren.",
   },
   {
     q: "Wie lange dauert der Versand?",

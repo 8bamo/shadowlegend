@@ -8,7 +8,7 @@ export async function GET() {
     headers: {
       "Content-Type":
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "Content-Disposition": 'attachment; filename="shadowlegend-vorlage.xlsx"',
+      "Content-Disposition": 'attachment; filename="shadowlegend-template.xlsx"',
     },
   });
 }

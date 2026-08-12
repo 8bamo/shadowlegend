@@ -54,12 +54,12 @@ export type ParseResult = {
 export function parseWorkbook(buffer: ArrayBuffer): ParseResult {
   const wb = XLSX.read(buffer, { type: "array" });
   const sheet = wb.Sheets[wb.SheetNames[0]];
-  if (!sheet) throw new Error("Die Datei enthält kein Tabellenblatt.");
+  if (!sheet) throw new Error("The file contains no worksheet.");
 
   const rows = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, {
     defval: "",
   });
-  if (rows.length === 0) throw new Error("Die Tabelle enthält keine Zeilen.");
+  if (rows.length === 0) throw new Error("The sheet contains no rows.");
 
   const headers = Object.keys(rows[0]);
   const map = buildMap(headers);
@@ -88,7 +88,7 @@ export function parseWorkbook(buffer: ArrayBuffer): ParseResult {
       id: rawId || `${key(name).slice(0, 40)}-${i}`,
       name,
       link,
-      category: String(get(row, "category") ?? "Sonstiges").trim() || "Sonstiges",
+      category: String(get(row, "category") ?? "Other").trim() || "Other",
       price: toPrice(get(row, "price")),
       image: String(get(row, "image") ?? "").trim(),
       brand: String(get(row, "brand") ?? "").trim() || undefined,
@@ -104,16 +104,16 @@ export function buildTemplate(): Buffer {
     {
       ID: "nike-tracksuit-01",
       Name: "Nike Miler Tracksuit Pink / Grey",
-      Kategorie: "Tracksuits",
-      Marke: "Nike",
-      Preis: 41,
+      Category: "Tracksuits",
+      Brand: "Nike",
+      Price: 41,
       Link: "https://agent.example.com/product?id=123456",
-      Bild: "https://example.com/bild.jpg",
-      Hot: "ja",
+      Image: "https://example.com/image.jpg",
+      Hot: "yes",
     },
   ];
   const ws = XLSX.utils.json_to_sheet(rows);
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Produkte");
+  XLSX.utils.book_append_sheet(wb, ws, "Products");
   return XLSX.write(wb, { type: "buffer", bookType: "xlsx" }) as Buffer;
 }

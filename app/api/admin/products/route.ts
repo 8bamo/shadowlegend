@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   if (!(await isLoggedIn())) {
-    return NextResponse.json({ error: "Nicht eingeloggt." }, { status: 401 });
+    return NextResponse.json({ error: "Not logged in." }, { status: 401 });
   }
   const store = await readStore();
   return NextResponse.json({ ...store, storage: storageMode() });
@@ -16,7 +16,7 @@ export async function GET() {
 /** Replaces the whole product list (used by delete / inline edit in the backend). */
 export async function PUT(request: Request) {
   if (!(await isLoggedIn())) {
-    return NextResponse.json({ error: "Nicht eingeloggt." }, { status: 401 });
+    return NextResponse.json({ error: "Not logged in." }, { status: 401 });
   }
 
   const body = (await request.json().catch(() => null)) as {
@@ -24,7 +24,7 @@ export async function PUT(request: Request) {
   } | null;
 
   if (!body || !Array.isArray(body.products)) {
-    return NextResponse.json({ error: "Ungültige Daten." }, { status: 400 });
+    return NextResponse.json({ error: "Invalid data." }, { status: 400 });
   }
 
   const store = await writeStore(body.products);

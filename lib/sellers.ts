@@ -6,34 +6,34 @@ export type Seller = {
   link: string;
 };
 
-/** Editiere diese Liste für die Seller-Übersicht auf /sellers. */
+/** Edit this list to change the seller overview on /sellers. */
 export const SELLERS: Seller[] = [
   {
     name: "Kaisen",
     focus: "Sneaker",
     rating: 5,
-    note: "Saubere QC-Bilder, versendet schnell ins Warehouse.",
+    note: "Clean QC pictures, ships to the warehouse fast.",
     link: "",
   },
   {
     name: "Muks",
     focus: "Tracksuits & Hoodies",
     rating: 5,
-    note: "Guter Stoff, Größen fallen normal aus.",
+    note: "Good fabric, sizes run true.",
     link: "",
   },
   {
     name: "Top Goods",
     focus: "Jackets",
     rating: 4,
-    note: "Preis-Leistung stark, gelegentlich längere Bearbeitungszeit.",
+    note: "Strong value, occasionally longer processing time.",
     link: "",
   },
   {
     name: "Sun Store",
-    focus: "Accessoires",
+    focus: "Accessories",
     rating: 4,
-    note: "Caps, Bags, Socken — zuverlässig für Kleinteile.",
+    note: "Caps, bags, socks — reliable for small items.",
     link: "",
   },
 ];

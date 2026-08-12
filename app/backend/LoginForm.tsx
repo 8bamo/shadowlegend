@@ -25,7 +25,7 @@ export default function LoginForm() {
       router.refresh();
     } else {
       const data = await res.json().catch(() => ({}));
-      setError(data.error ?? "Login fehlgeschlagen.");
+      setError(data.error ?? "Login failed.");
       setBusy(false);
     }
   }
@@ -44,14 +44,14 @@ export default function LoginForm() {
           Backend
         </h1>
         <p className="mt-2 text-xs uppercase tracking-[0.25em] text-white/40">
-          Zugang nur für Admins
+          Admins only
         </p>
 
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Passwort"
+          placeholder="Password"
           autoFocus
           className="mt-8 w-full rounded-full border border-white/20 bg-transparent px-5 py-3 text-sm outline-none transition-colors placeholder:text-white/30 focus:border-white"
         />
@@ -71,7 +71,7 @@ export default function LoginForm() {
           disabled={busy}
           className="sweep mt-6 w-full rounded-full bg-white py-3 text-xs font-black uppercase tracking-[0.3em] text-black transition-transform hover:scale-[1.02] disabled:opacity-50"
         >
-          {busy ? "…" : "Einloggen"}
+          {busy ? "…" : "Log in"}
         </button>
       </motion.form>
     </div>

@@ -6,11 +6,11 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { SITE } from "@/lib/site";
 
 const LINKS = [
-  { href: "/products", label: "Produkte" },
+  { href: "/products", label: "Products" },
   { href: "/outfits", label: "Outfits" },
   { href: "/sellers", label: "Sellers" },
   { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -81,7 +81,7 @@ export default function Nav() {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            aria-label="Menü"
+            aria-label="Menu"
             className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
           >
             <span

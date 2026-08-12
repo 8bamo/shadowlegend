@@ -11,16 +11,16 @@ export const dynamic = "force-dynamic";
 
 const STEPS = [
   {
-    title: "Finden",
-    text: "Produkt in der Liste suchen oder nach Kategorie filtern.",
+    title: "Find",
+    text: "Search the list or filter by category.",
   },
   {
-    title: "Klicken",
-    text: "Der Link führt dich direkt zum Artikel beim Agent.",
+    title: "Click",
+    text: "The link takes you straight to the item at the agent.",
   },
   {
-    title: "Bestellen",
-    text: "In den Warenkorb, versenden lassen, fertig.",
+    title: "Order",
+    text: "Add to cart, ship it, done.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default async function HomePage() {
       <section id="albums" className="mx-auto max-w-7xl px-5 py-24">
         <Reveal className="mb-10">
           <p className="text-[11px] uppercase tracking-[0.35em] text-white/40">
-            Kategorien
+            Categories
           </p>
           <h2 className="mt-3 text-4xl font-black uppercase tracking-tighter md:text-6xl">
             Shop By Album
@@ -81,7 +81,7 @@ export default async function HomePage() {
             href="/products"
             className="group shrink-0 text-xs font-bold uppercase tracking-[0.25em] text-white/60 hover:text-white"
           >
-            Alle ansehen
+            View all
             <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
               →
             </span>
@@ -90,11 +90,11 @@ export default async function HomePage() {
 
         {featured.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-white/15 px-6 py-20 text-center text-sm text-white/40">
-            Noch keine Produkte importiert. Im{" "}
+            No products imported yet. Upload a spreadsheet in the{" "}
             <Link href="/backend" className="underline">
               Backend
             </Link>{" "}
-            eine Excel hochladen.
+            to get started.
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
@@ -161,10 +161,10 @@ export default async function HomePage() {
         <div className="grid-bg absolute inset-0 opacity-40" />
         <Reveal className="relative mx-auto max-w-3xl px-5 text-center">
           <h2 className="text-4xl font-black uppercase leading-none tracking-tighter md:text-7xl">
-            Bereit?
+            Ready?
           </h2>
           <p className="mx-auto mt-6 max-w-md text-white/50">
-            Alle Links, Coupons und Guides an einem Ort.
+            All links, coupons and guides in one place.
           </p>
           <a
             href={SITE.linktree}
@@ -172,7 +172,7 @@ export default async function HomePage() {
             rel="noreferrer"
             className="sweep mt-10 inline-block rounded-full bg-white px-12 py-5 text-xs font-black uppercase tracking-[0.3em] text-black transition-transform hover:scale-105"
           >
-            Zum Linktree
+            Open Linktree
           </a>
         </Reveal>
       </section>

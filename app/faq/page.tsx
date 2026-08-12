@@ -6,40 +6,40 @@ export const metadata = { title: "FAQ — SHADOWLEGEND" };
 
 const FAQ = [
   {
-    q: "Was ist SHADOWLEGEND?",
-    a: "Eine kuratierte Linkliste. Ich sammle Finds, prüfe Qualität und Preis und stelle sie hier mit direktem Link ein — du sparst dir das Suchen.",
+    q: "What is SHADOWLEGEND?",
+    a: "A curated link list. I collect finds, check quality and price, and post them here with a direct link — so you don't have to search.",
   },
   {
-    q: "Wie bestelle ich?",
-    a: "Produkt anklicken, du landest direkt beim Artikel beim Agent. Dort in den Warenkorb legen, bezahlen und später den Versand (Shipping) auslösen.",
+    q: "How do I order?",
+    a: "Click a product and you land directly on the item at the agent. Add it to your cart, pay, and ship it later from the warehouse.",
   },
   {
-    q: "Welchen Agent soll ich nehmen?",
-    a: "Nimm den Agent deines Vertrauens. Die aktuellen Empfehlungen und Sign-Up-Links findest du in meinem Linktree — bei einem anderen Agent musst du den Artikel-Link selbst konvertieren.",
+    q: "Which agent should I use?",
+    a: "Use the agent you trust. Current recommendations and sign-up links are in my Linktree — with a different agent you'll have to convert the item link yourself.",
   },
   {
-    q: "Wie lange dauert der Versand?",
-    a: "Vom Verkäufer ins Warehouse meist 3–7 Tage. Der internationale Versand dauert je nach Linie typischerweise 7–20 Tage.",
+    q: "How long does shipping take?",
+    a: "From the seller to the warehouse usually takes 3–7 days. International shipping typically runs 7–20 days depending on the line.",
   },
   {
-    q: "Was kostet der Versand?",
-    a: "Hängt an Gewicht, Volumen und Versandlinie. Grober Richtwert: 1,5–2 kg landen oft bei 20–40 €. Im Warehouse kannst du die Linien vergleichen.",
+    q: "What does shipping cost?",
+    a: "It depends on weight, volume and shipping line. Rough guide: 1.5–2 kg often lands between €20 and €40. You can compare lines in the warehouse.",
   },
   {
-    q: "Was ist QC?",
-    a: "Quality Check — Fotos deines Artikels im Warehouse, bevor du versendest. Immer anschauen: bei Mängeln kannst du reklamieren oder zurückgeben.",
+    q: "What is QC?",
+    a: "Quality Check — photos of your item taken in the warehouse before you ship. Always look at them: if something is off, you can complain or return it.",
   },
   {
-    q: "Stimmen die Preise auf der Seite?",
-    a: "Die Preise sind Momentaufnahmen aus meiner Liste. Verkäufer ändern Preise — maßgeblich ist immer der Preis auf der Zielseite.",
+    q: "Are the prices on this site accurate?",
+    a: "Prices are snapshots from my list. Sellers change them — the price on the destination page is always the one that counts.",
   },
   {
-    q: "Welche Größe soll ich nehmen?",
-    a: "Asiatische Größen fallen meist kleiner aus. Nimm eine Nummer größer und richte dich nach der Maßtabelle des Verkäufers, nicht nach dem Label.",
+    q: "Which size should I take?",
+    a: "Asian sizes usually run small. Go one size up and follow the seller's measurement chart rather than the label.",
   },
   {
-    q: "Ein Link geht nicht mehr — was tun?",
-    a: "Verkäufer nehmen Artikel offline. Schreib mir über den Linktree, dann suche ich Ersatz und aktualisiere die Liste.",
+    q: "A link is dead — what now?",
+    a: "Sellers take items offline. Message me through the Linktree and I'll find a replacement and update the list.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function FaqPage() {
       <Reveal delay={0.2}>
         <div className="mt-16 rounded-3xl border border-white/15 p-8 text-center">
           <p className="text-sm text-white/50">
-            Frage nicht dabei? Schreib mir direkt.
+            Question not covered? Message me directly.
           </p>
           <a
             href={SITE.linktree}
@@ -68,7 +68,7 @@ export default function FaqPage() {
             rel="noreferrer"
             className="sweep mt-6 inline-block rounded-full bg-white px-9 py-4 text-xs font-black uppercase tracking-[0.25em] text-black transition-transform hover:scale-105"
           >
-            Kontakt
+            Contact
           </a>
         </div>
       </Reveal>

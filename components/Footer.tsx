@@ -11,8 +11,7 @@ export default function Footer() {
             {SITE.name}
           </p>
           <p className="mt-3 max-w-xs text-sm text-white/50">
-            Kuratierte Finds, direkte Links, keine Umwege. Alles schwarz auf
-            weiß.
+            Curated finds, direct links, no detours. All black on white.
           </p>
         </div>
 
@@ -21,7 +20,7 @@ export default function Footer() {
             Navigation
           </span>
           <Link href="/products" className="w-fit text-white/70 hover:text-white">
-            Alle Produkte
+            All Products
           </Link>
           <Link href="/outfits" className="w-fit text-white/70 hover:text-white">
             Outfit Inspiration
@@ -33,7 +32,7 @@ export default function Footer() {
             FAQ
           </Link>
           <Link href="/contact" className="w-fit text-white/70 hover:text-white">
-            Kontakt
+            Contact
           </Link>
           <Link href="/backend" className="w-fit text-white/40 hover:text-white">
             Backend
@@ -62,7 +61,7 @@ export default function Footer() {
       <LegalNotice />
 
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/30">
-        © {new Date().getFullYear()} {SITE.name}. Alle Preise ohne Gewähr.
+        © {new Date().getFullYear()} {SITE.name}. All prices without guarantee.
       </div>
     </footer>
   );

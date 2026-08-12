@@ -19,8 +19,8 @@ export default function SellersPage() {
           </span>
         </h1>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/50">
-          Verkäufer, mit denen ich selbst bestellt habe. Bewertung nach
-          Qualität, Kommunikation und Bearbeitungszeit.
+          Sellers I have ordered from myself. Rated on quality,
+          communication and processing time.
         </p>
       </Reveal>
 
@@ -47,7 +47,7 @@ export default function SellersPage() {
 
               <div
                 className="text-sm tracking-[0.2em] text-white"
-                aria-label={`${seller.rating} von 5`}
+                aria-label={`${seller.rating} out of 5`}
               >
                 {"★".repeat(seller.rating)}
                 <span className="text-white/20">
@@ -72,9 +72,9 @@ export default function SellersPage() {
 
       <Reveal delay={0.2}>
         <p className="mt-10 text-xs leading-relaxed text-white/35">
-          Ich verdiene an manchen Links eine kleine Provision — für dich ändert
-          sich am Preis nichts. Alle Bewertungen basieren auf eigenen
-          Bestellungen. Aktuelle Links immer im{" "}
+          I earn a small commission on some links — the price stays the same
+          for you. All ratings are based on my own orders. Current links are
+          always in the{" "}
           <a
             href={SITE.linktree}
             target="_blank"

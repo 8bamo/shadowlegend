@@ -15,18 +15,18 @@ export default function ProductGrid({
   initialQuery?: string;
 }) {
   const [query, setQuery] = useState(initialQuery);
-  const [category, setCategory] = useState("Alle");
+  const [category, setCategory] = useState("All");
   const [limit, setLimit] = useState(PAGE);
 
   const categories = useMemo(() => {
     const set = new Set(products.map((p) => p.category).filter(Boolean));
-    return ["Alle", ...[...set].sort()];
+    return ["All", ...[...set].sort()];
   }, [products]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return products.filter((p) => {
-      const matchesCat = category === "Alle" || p.category === category;
+      const matchesCat = category === "All" || p.category === category;
       const matchesQuery =
         !q ||
         p.name.toLowerCase().includes(q) ||
@@ -47,7 +47,7 @@ export default function ProductGrid({
             setQuery(e.target.value);
             setLimit(PAGE);
           }}
-          placeholder="Suchen — Name, Brand, Kategorie…"
+          placeholder="Search — name, brand, category…"
           className="w-full rounded-full border border-white/20 bg-transparent px-5 py-3 text-sm outline-none transition-colors placeholder:text-white/30 focus:border-white"
         />
 
@@ -72,12 +72,12 @@ export default function ProductGrid({
       </div>
 
       <p className="mb-6 text-xs uppercase tracking-[0.25em] text-white/40">
-        {filtered.length} Produkte
+        {filtered.length} Products
       </p>
 
       {filtered.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-white/15 px-6 py-20 text-center text-sm text-white/40">
-          Nichts gefunden. Andere Suche probieren.
+          Nothing found. Try a different search.
         </div>
       ) : (
         <motion.div
@@ -98,7 +98,7 @@ export default function ProductGrid({
             onClick={() => setLimit((l) => l + PAGE)}
             className="sweep rounded-full border border-white px-8 py-3 text-xs font-bold uppercase tracking-[0.25em] transition-colors hover:bg-white hover:text-black"
           >
-            Mehr laden
+            Load more
           </button>
         </div>
       )}

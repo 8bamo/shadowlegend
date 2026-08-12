@@ -6,11 +6,11 @@ export type Outfit = {
   pieces: { name: string; link: string }[];
 };
 
-/** Editiere diese Liste, um die Outfit-Inspiration auf /outfits zu ändern. */
+/** Edit this list to change the outfit inspiration shown on /outfits. */
 export const OUTFITS: Outfit[] = [
   {
     title: "All Black Everything",
-    vibe: "Clean, dunkel, funktioniert immer",
+    vibe: "Clean, dark, always works",
     image: "",
     pieces: [
       { name: "Tech Fleece Hoodie Black", link: "/products?q=hoodie" },
@@ -20,7 +20,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     title: "Monochrome Street",
-    vibe: "Weiß auf Schwarz, harte Kanten",
+    vibe: "White on black, hard edges",
     image: "",
     pieces: [
       { name: "Oversized Tee White", link: "/products?q=tee" },
@@ -30,7 +30,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     title: "Winter Layers",
-    vibe: "Puffer über Hoodie, warm und breit",
+    vibe: "Puffer over hoodie, warm and wide",
     image: "",
     pieces: [
       { name: "Puffer Jacket Black", link: "/products?q=jacket" },
@@ -40,7 +40,7 @@ export const OUTFITS: Outfit[] = [
   },
   {
     title: "Tracksuit Season",
-    vibe: "Ein Set, null Aufwand",
+    vibe: "One set, zero effort",
     image: "",
     pieces: [
       { name: "Full Tracksuit", link: "/products?q=tracksuit" },

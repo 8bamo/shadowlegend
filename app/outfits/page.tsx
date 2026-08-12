@@ -20,8 +20,8 @@ export default function OutfitsPage() {
           </span>
         </h1>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/50">
-          Fertige Kombinationen zum Nachbauen. Jedes Teil führt in die
-          Produktliste.
+          Ready-made combinations to rebuild. Every piece links into the
+          product list.
         </p>
       </Reveal>
 
@@ -34,13 +34,13 @@ export default function OutfitsPage() {
       <Reveal delay={0.15}>
         <div className="mt-16 rounded-3xl border border-dashed border-white/15 p-10 text-center">
           <p className="text-sm text-white/50">
-            Mehr Fits gibt es täglich in meinen Channels.
+            More fits daily in my channels.
           </p>
           <Link
             href="/contact"
             className="sweep mt-6 inline-block rounded-full border border-white px-9 py-4 text-xs font-black uppercase tracking-[0.25em] transition-colors hover:bg-white hover:text-black"
           >
-            Folgen
+            Follow
           </Link>
         </div>
       </Reveal>

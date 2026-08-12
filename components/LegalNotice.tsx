@@ -34,7 +34,7 @@ const SECTIONS = [
 ];
 
 export default function LegalNotice() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <section

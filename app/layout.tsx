@@ -8,7 +8,7 @@ import Cursor from "@/components/Cursor";
 export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.tagline}`,
   description:
-    "Kuratierte Fashion-Finds mit direkten Links. Schwarz. Weiß. Nichts dazwischen.",
+    "Curated fashion finds with direct links. Black. White. Nothing in between.",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
+    <html lang="en">
       <body className="noise min-h-screen antialiased">
         <Cursor />
         <Nav />

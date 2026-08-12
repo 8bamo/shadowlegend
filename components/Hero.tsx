@@ -66,8 +66,8 @@ export default function Hero({ count }: { count: number }) {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-8 max-w-xl text-base leading-relaxed text-white/60"
         >
-          {count > 0 ? `${count} kuratierte Finds` : "Kuratierte Finds"} — jeder
-          Eintrag führt direkt zum Link. Kein Suchen, kein Raten.
+          {count > 0 ? `${count} curated finds` : "Curated finds"} — every entry
+          takes you straight to the link. No searching, no guessing.
         </motion.p>
 
         <motion.div
@@ -80,7 +80,7 @@ export default function Hero({ count }: { count: number }) {
             href="/products"
             className="sweep rounded-full bg-white px-9 py-4 text-xs font-black uppercase tracking-[0.25em] text-black transition-transform hover:scale-[1.03]"
           >
-            Alle Produkte
+            All Products
           </Link>
           <a
             href={SITE.linktree}

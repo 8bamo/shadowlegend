@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   };
 
   if (!checkPassword(password ?? "")) {
-    return NextResponse.json({ error: "Falsches Passwort." }, { status: 401 });
+    return NextResponse.json({ error: "Wrong password." }, { status: 401 });
   }
 
   const res = NextResponse.json({ ok: true });

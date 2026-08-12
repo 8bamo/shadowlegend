@@ -54,16 +54,16 @@ export default function Dashboard({
     const data = await res.json().catch(() => ({}));
 
     if (!res.ok) {
-      setError(data.error ?? "Import fehlgeschlagen.");
+      setError(data.error ?? "Import failed.");
       setBusy(false);
       return;
     }
 
     const result = data as ImportResult;
     setMessage(
-      `${result.imported} Produkte importiert${
-        result.skipped ? `, ${result.skipped} Zeilen übersprungen` : ""
-      }. Gesamt: ${result.total}.`,
+      `${result.imported} products imported${
+        result.skipped ? `, ${result.skipped} rows skipped` : ""
+      }. Total: ${result.total}.`,
     );
     setBusy(false);
     router.refresh();
@@ -95,9 +95,9 @@ export default function Dashboard({
             Backend
           </h1>
           <p className="mt-2 text-xs uppercase tracking-[0.25em] text-white/40">
-            {products.length} Produkte · Speicher: {storage}
+            {products.length} products · Storage: {storage}
             {updatedAt &&
-              ` · ${new Date(updatedAt).toLocaleString("de-DE")}`}
+              ` · ${new Date(updatedAt).toLocaleString("en-GB")}`}
           </p>
         </div>
         <button
@@ -110,24 +110,24 @@ export default function Dashboard({
 
       {storage === "file" && (
         <p className="mt-6 rounded-2xl border border-white/15 px-5 py-4 text-xs leading-relaxed text-white/50">
-          Kein Vercel-Blob-Token gesetzt — Änderungen landen lokal in{" "}
-          <code className="text-white/80">data/products.json</code>. Auf Vercel
-          ist das Dateisystem schreibgeschützt: dort brauchst du einen Blob-Store
-          (Env <code className="text-white/80">BLOB_READ_WRITE_TOKEN</code>),
-          sonst gehen Imports beim nächsten Deploy verloren.
+          No Vercel Blob token set — changes are written locally to{" "}
+          <code className="text-white/80">data/products.json</code>. On Vercel
+          the filesystem is read-only: you need a Blob store there (env{" "}
+          <code className="text-white/80">BLOB_READ_WRITE_TOKEN</code>),
+          otherwise imports are lost on the next deploy.
         </p>
       )}
 
       {/* Import */}
       <section className="mt-10 rounded-3xl border border-white/15 p-6 md:p-8">
         <h2 className="text-xl font-black uppercase tracking-[0.15em]">
-          Excel-Import
+          Excel Import
         </h2>
         <p className="mt-2 text-sm text-white/50">
-          Spalten: <b className="text-white/80">Name</b> und{" "}
-          <b className="text-white/80">Link</b> sind Pflicht. Optional:
-          Kategorie, Marke, Preis, Bild, Hot, ID. Deutsche und englische
-          Überschriften werden erkannt.
+          Columns: <b className="text-white/80">Name</b> and{" "}
+          <b className="text-white/80">Link</b> are required. Optional:
+          category, brand, price, image, hot, ID. English and German headers
+          are both recognised.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -141,14 +141,14 @@ export default function Dashboard({
                   : "border-white/20 text-white/60 hover:border-white/60"
               }`}
             >
-              {m === "replace" ? "Ersetzen" : "Zusammenführen"}
+              {m === "replace" ? "Replace" : "Merge"}
             </button>
           ))}
           <a
             href="/api/admin/template"
             className="ml-auto text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 underline hover:text-white"
           >
-            Vorlage herunterladen
+            Download template
           </a>
         </div>
 
@@ -173,7 +173,7 @@ export default function Dashboard({
             }}
           />
           <span className="text-sm font-bold uppercase tracking-[0.25em]">
-            {busy ? "Wird importiert…" : "Datei ablegen oder klicken"}
+            {busy ? "Importing…" : "Drop a file or click"}
           </span>
           <span className="mt-2 text-xs text-white/40">.xlsx · .xls · .csv</span>
         </label>
@@ -196,26 +196,26 @@ export default function Dashboard({
         </AnimatePresence>
       </section>
 
-      {/* Liste */}
+      {/* List */}
       <section className="mt-10">
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="text-xl font-black uppercase tracking-[0.15em]">
-            Produkte
+            Products
           </h2>
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Filtern…"
+            placeholder="Filter…"
             className="ml-auto w-56 rounded-full border border-white/20 bg-transparent px-4 py-2 text-sm outline-none placeholder:text-white/30 focus:border-white"
           />
           {products.length > 0 && (
             <button
               onClick={() => {
-                if (confirm("Wirklich ALLE Produkte löschen?")) void persist([]);
+                if (confirm("Really delete ALL products?")) void persist([]);
               }}
               className="rounded-full border border-white/20 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 hover:border-white hover:text-white"
             >
-              Alle löschen
+              Delete all
             </button>
           )}
         </div>
@@ -224,10 +224,10 @@ export default function Dashboard({
           <table className="w-full min-w-[720px] text-left text-sm">
             <thead className="border-b border-white/10 text-[10px] uppercase tracking-[0.2em] text-white/40">
               <tr>
-                <th className="px-4 py-3">Bild</th>
+                <th className="px-4 py-3">Image</th>
                 <th className="px-4 py-3">Name</th>
-                <th className="px-4 py-3">Kategorie</th>
-                <th className="px-4 py-3">Preis</th>
+                <th className="px-4 py-3">Category</th>
+                <th className="px-4 py-3">Price</th>
                 <th className="px-4 py-3">Link</th>
                 <th className="px-4 py-3" />
               </tr>
@@ -262,7 +262,7 @@ export default function Dashboard({
                       rel="noreferrer"
                       className="text-white/50 underline hover:text-white"
                     >
-                      öffnen
+                      open
                     </a>
                   </td>
                   <td className="px-4 py-2 text-right">
@@ -272,7 +272,7 @@ export default function Dashboard({
                       }
                       className="text-[11px] uppercase tracking-[0.2em] text-white/40 hover:text-white"
                     >
-                      löschen
+                      delete
                     </button>
                   </td>
                 </tr>
@@ -282,14 +282,14 @@ export default function Dashboard({
 
           {filtered.length === 0 && (
             <p className="px-4 py-14 text-center text-sm text-white/40">
-              Keine Produkte.
+              No products.
             </p>
           )}
         </div>
 
         {filtered.length > 300 && (
           <p className="mt-3 text-xs text-white/35">
-            Zeige die ersten 300 von {filtered.length} — zum Eingrenzen filtern.
+            Showing the first 300 of {filtered.length} — filter to narrow it down.
           </p>
         )}
       </section>
